@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
               behavior: HitTestBehavior.translucent,
               onTap: () {
                 // EumsOfferWallService.instance.authConnect(
-                //     menId: "abeetest",
+                //     memId: "abeetest",
                 //     memGen: "m",
                 //     memBirth: "2023-06-02T06:51:17.205Z",
                 //     memRegion: "hà nội");

@@ -20,13 +20,13 @@ abstract class EumsOfferWallService extends PlatformInterface {
     _instance = instance;
   }
 
-  /// [menId] 아이디입력
+  /// [memId] 아이디입력
   /// [memGen] 성별입력
   ///[memRegion] 주소입력
   ///[memBirth] 생년월일 입력 양식 "2023-06-02T06:51:17.205Z"
   /// sdk연동하기 시작할 때 호출
   Future<dynamic> authConnect(
-      {String? menId, String? memGen, String? memRegion, String? memBirth});
+      {String? memId, String? memGen, String? memRegion, String? memBirth});
 
   /// 유저 정보
   Future<dynamic> userInfo();

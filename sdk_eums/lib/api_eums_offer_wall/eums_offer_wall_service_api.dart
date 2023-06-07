@@ -13,12 +13,12 @@ class EumsOfferWallServiceApi extends EumsOfferWallService {
 
   @override
   Future authConnect(
-      {String? menId,
+      {String? memId,
       String? memGen,
       String? memRegion,
       String? memBirth}) async {
     dynamic data = <String, dynamic>{
-      "memId": menId,
+      "memId": memId,
       "memGen": memGen,
       "memRegion": memRegion,
       "memBirth": memBirth
