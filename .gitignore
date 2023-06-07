@@ -25,3 +25,5 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+sdk_eums/.fvm/fvm_config.json
+sdk_eums/.fvm/flutter_sdk
