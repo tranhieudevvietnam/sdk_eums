@@ -6,7 +6,7 @@ publish_to: none
 
 environment:
   # sdk: '>=3.0.0 <4.0.0'
-  sdk: '>=2.17.0 <4.0.0'
+  sdk: ">=2.17.0 <4.0.0"
   flutter: ">=3.3.0"
 
 dependencies:
@@ -27,15 +27,28 @@ dependencies:
   # endregion
 
   dio: ^5.0.3
+  carousel_slider: ^4.2.1
+  device_apps: ^2.2.0
+  image_picker: ^0.8.6+4
   shared_preferences: ^2.0.13
-  intl: 
+  intl:
+  flutter_easyloading: ^3.0.5
+  rxdart: ^0.27.7
+  cached_network_image: ^3.2.0
+  webview_flutter: ^4.0.7
+  webview_flutter_android: ^3.7.1
+  webview_flutter_wkwebview: ^3.4.4
+  flutter_widget_from_html: ^0.9.0
+  fluttertoast: ^8.2.1
+  pull_to_refresh: ^2.0.0
+  flutter_bloc: ^8.1.2
+  equatable: ^2.0.5
   sdk_eums_c:
     git:
-      url: https://github.com/tranhieudevvietnam/sdk_eums.git
+      url: https://github.com/Greenapp02/sdk_eums.git
+      ref: dev
       path: sdk_eums_c
     # path: ../sdk_eums_c
-  
-
 
 dev_dependencies:
   flutter_test:
@@ -44,7 +57,6 @@ dev_dependencies:
   json_serializable: ^6.5.4
   build_runner:
   flutter_gen_runner:
-
 
 flutter_gen:
   output: lib/gen/ # Optional (default: lib/gen/)
@@ -58,7 +70,6 @@ flutter_gen:
       # - assets/colors.xml
       # - assets/
 
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -67,6 +78,9 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/icons/
+    - assets/flutter_i18n/
+    - assets/fonts/
   # This section identifies this Flutter project as a plugin project.
   # The 'pluginClass' specifies the class (in Java, Kotlin, Swift, Objective-C, etc.)
   # which should be registered in the plugin registry. This is required for

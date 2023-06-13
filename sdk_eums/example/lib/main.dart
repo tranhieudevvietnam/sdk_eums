@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:sdk_eums/api_eums_offer_wall/eums_offer_wall_service_api.dart';
+import 'package:sdk_eums/eum_app_offer_wall/eums_app_i.dart';
 import 'package:sdk_eums/method_sdk/sdk_eums_platform_interface.dart';
 import 'package:sdk_eums/notification/true_caller_overlay.dart';
 import 'package:sdk_eums/sdk_eums.dart';
-import 'package:sdk_eums/api_eums_offer_wall/eums_offer_wall_service.dart';
+import 'package:sdk_eums/sdk_eums_library.dart';
 
 void main() {
   SdkEums.instant.init(
@@ -15,6 +18,9 @@ void main() {
 // overlay entry point
 @pragma("vm:entry-point")
 void overlayMain() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+    statusBarColor: Colors.transparent,
+  ));
   runApp(const MaterialApp(
       debugShowCheckedModeBanner: false, home: TrueCallerOverlay()));
 }
@@ -27,7 +33,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     super.initState();
@@ -48,15 +53,16 @@ class _MyAppState extends State<MyApp> {
             GestureDetector(
               behavior: HitTestBehavior.translucent,
               onTap: () {
-                // EumsOfferWallService.instance.authConnect(
-                //     memId: "abeetest",
-                //     memGen: "m",
-                //     memBirth: "2023-06-02T06:51:17.205Z",
-                //     memRegion: "hà nội");
-                SdkEumsPlatform.instance.methodAdsync();
+                EumsAppOfferWallService.instance.openSdk(
+                  memBirth: "2023-06-09T02:26:42.135Z",
+                  memId: "abeetest",
+                  memGen: "m",
+                  memRegion: "서울_종로",
+                );
               },
-              child: const SizedBox(
+              child: Container(
                 height: 50,
+                color: Colors.amber,
                 width: 100,
                 child: Text("Adsync"),
               ),
@@ -64,7 +70,8 @@ class _MyAppState extends State<MyApp> {
             GestureDetector(
               behavior: HitTestBehavior.translucent,
               onTap: () {
-                // EumsOfferWallService.instance.userInfo();
+                // EumsOfferWallService.instance.userInfo()
+                EumsOfferWallServiceApi();
                 SdkEumsPlatform.instance.methodAdpopcorn();
               },
               child: const SizedBox(

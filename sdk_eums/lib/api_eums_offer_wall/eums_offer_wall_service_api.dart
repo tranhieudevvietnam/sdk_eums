@@ -1,15 +1,14 @@
-import 'dart:io';
 import 'dart:convert';
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:sdk_eums/common/api.dart';
 
-import '../common/local_store/local_store.dart';
-import '../common/local_store/local_store_service.dart';
 import 'eums_offer_wall_service.dart';
 
 class EumsOfferWallServiceApi extends EumsOfferWallService {
   Dio api = BaseApi().buildDio();
-  LocalStore localStore = LocalStoreService();
+
 
   @override
   Future authConnect(
@@ -24,8 +23,7 @@ class EumsOfferWallServiceApi extends EumsOfferWallService {
       "memBirth": memBirth
     };
     Response result = await api.post('auth/connect', data: data);
-    localStore.setAccessToken(result.data['token']);
-    return;
+    return result.data;
   }
 
   @override
@@ -194,6 +192,7 @@ class EumsOfferWallServiceApi extends EumsOfferWallService {
   @override
   Future missionOfferWallOutside({advertiseIdx, pointType}) async {
     // bên ngoài
+    print("advertiseIdx$advertiseIdx");
     dynamic data = <String, dynamic>{
       "advertise_idx": advertiseIdx,
       "pointType": pointType

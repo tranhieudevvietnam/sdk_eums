@@ -1,5 +1,7 @@
 import 'dart:io';
+
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+
 import 'eums_offer_wall_service_api.dart';
 
 abstract class EumsOfferWallService extends PlatformInterface {
@@ -20,7 +22,7 @@ abstract class EumsOfferWallService extends PlatformInterface {
     _instance = instance;
   }
 
-  /// [memId] 아이디입력
+  /// [menId] 아이디입력
   /// [memGen] 성별입력
   ///[memRegion] 주소입력
   ///[memBirth] 생년월일 입력 양식 "2023-06-02T06:51:17.205Z"
@@ -92,7 +94,7 @@ abstract class EumsOfferWallService extends PlatformInterface {
   ///  [offerWallIdx] 광고 아이디
   ///  [urlImage] api에서 가져오기 [uploadImageOfferWallInternal]
   Future<dynamic> missionOfferWallInternal(
-      {String? offerWallIdx, String? urlImage});
+      {int? offerWallIdx, String? urlImage});
 
   /// 미션완료후에 사진 업로드
   /// api를 호출후에 [missionOfferWallInternal]
@@ -103,5 +105,5 @@ abstract class EumsOfferWallService extends PlatformInterface {
   ///[pointType] 광고 아이디  enum POINT_ADS_EUM {POINT_8 = 'POINT_8', POINT_16 = 'POINT_16', POINT_32 = 'POINT_32', POINT_80 = 'POINT_80', POINT_160 = 'POINT_160'
 
   Future<dynamic> missionOfferWallOutside(
-      {String? advertiseIdx, String? pointType});
+      {int? advertiseIdx, String? pointType});
 }

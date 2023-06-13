@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+
 import '../local_store/local_store.dart';
 
 class AccessTokenInterceptor extends Interceptor {
@@ -10,9 +11,10 @@ class AccessTokenInterceptor extends Interceptor {
   Future<dynamic> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     String token = await localStore.getAccessToken();
+    print("tokentokentoken$token");
     if (token.isNotEmpty) {
       options.headers['authorization'] = 'Bearer $token';
-      // options.queryParameters.addAll(<String, dynamic>{'access_token': 'Bearer $token'});
+      options.queryParameters.addAll(<String, dynamic>{'access_token': 'Bearer $token'});
     }
     return super.onRequest(options, handler);
   }
